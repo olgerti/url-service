@@ -4,6 +4,7 @@ import { AppService } from './app.service';
 import { UrlShortenerModule } from './url-shortener/url-shortener.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { UrlShortener } from './url-shortener/entities/url-shortener.entity';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
   imports: [
@@ -18,6 +19,9 @@ import { UrlShortener } from './url-shortener/entities/url-shortener.entity';
       synchronize: true, // Turn off in production
     }),
     TypeOrmModule.forFeature([UrlShortenerModule]),
+    ConfigModule.forRoot({
+      isGlobal: true,
+    }),
   ],
   controllers: [AppController],
   providers: [AppService],

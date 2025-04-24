@@ -1,10 +1,7 @@
 // src/url-shortener/dto/url-shortener.dto.ts
 import { IsNotEmpty } from '@nestjs/class-validator';
 import { ApiProperty } from '@nestjs/swagger';
-import {
-  IsUUID,
-  IsUrl
-} from 'class-validator';
+import { IsUUID, IsUrl } from 'class-validator';
 
 export class UrlShortenerDto {
   @ApiProperty({
